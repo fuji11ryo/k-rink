@@ -191,6 +191,17 @@
     color: var(--navy);
     font-weight: 800;
   }
+  .business-card .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 0.86rem;
+    font-weight: bold;
+    color: var(--navy);
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 2px;
+  }
 
   /* ---------- 導入実績 ---------- */
   .achieve {
@@ -200,7 +211,7 @@
   .achieve .section-tag { color: var(--silver-light); border-bottom-color: var(--silver); }
   .achieve-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   .achieve-item {
@@ -224,11 +235,12 @@
     font-weight: bold;
   }
   .achieve-item p { font-size: 0.92rem; color: var(--silver-light); }
-  .achieve-note {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 0.82rem;
-    color: var(--silver-light);
+  .achieve-tag {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--silver);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
   }
 
   /* ---------- 会社概要 ---------- */
@@ -350,6 +362,7 @@
             <li>有資格者4名在籍</li>
             <li>対応エリア：滋賀県・京都府・大阪府</li>
           </ul>
+          <a class="card-link" href="https://claude.ai/code/artifact/62944a67-0114-46dd-afdd-81db102a3d0a" target="_blank" rel="noopener noreferrer">サイトを見る →</a>
         </div>
       </div>
       <div class="business-card">
@@ -358,12 +371,13 @@
           <h3>運送事業</h3>
         </div>
         <div class="body">
-          <p>単身・家族の引っ越しから法人の移転・配送業務まで幅広く対応。梱包から搬入・設置まで、専門スタッフが丁寧に作業します。</p>
+          <p>単身・家族・法人の引っ越しを中心に、関西一円で対応。下請けとして培った1年半の実務経験を活かし、価格の安さ・スピード対応・丁寧な作業に力を入れています。</p>
           <ul class="points">
-            <li>単身・家族・法人の引っ越し</li>
-            <li>中・長距離の引っ越しにも対応</li>
-            <li>配送業務・遺品整理も対応</li>
+            <li>単身・家族・法人の引っ越しに対応</li>
+            <li>対応エリア：関西一円</li>
+            <li>スタッフ7名体制・即日対応可能</li>
           </ul>
+          <a class="card-link" href="https://hopehikkosiservice.wpcomstaging.com/" target="_blank" rel="noopener noreferrer">サイトを見る →</a>
         </div>
       </div>
       <div class="business-card">
@@ -372,11 +386,13 @@
           <h3>IT事業</h3>
         </div>
         <div class="body">
-          <p>常駐型のSES(システムエンジニアリングサービス)を中心に、お客様先へのエンジニア派遣を通じてシステム開発・運用を支援します。</p>
+          <p>インフラ・Web開発領域を中心に、自社エンジニアを常駐先へ派遣するSES(システムエンジニアリングサービス)を展開。大手インフラ系メーカーへの常駐実績があります。</p>
           <ul class="points">
-            <li>SESによるエンジニア派遣</li>
-            <li>常駐先での開発・運用支援</li>
+            <li>対応領域：インフラ／Web開発</li>
+            <li>自社プロパーエンジニア2名が稼働中</li>
+            <li>大手インフラ系メーカーへの常駐実績</li>
           </ul>
+          <a class="card-link" href="https://gray103378.studio.site/" target="_blank" rel="noopener noreferrer">サイトを見る →</a>
         </div>
       </div>
     </div>
@@ -392,14 +408,17 @@
     <div class="achieve-list">
       <div class="achieve-item">
         <div class="check">✓</div>
-        <p>大手飲食チェーン店 エアコン取替工事</p>
+        <p><span class="achieve-tag">電気設備事業</span>大手飲食チェーン店 エアコン取替工事</p>
       </div>
       <div class="achieve-item">
         <div class="check">✓</div>
-        <p>大手住宅設備メーカー 給湯器入替工事</p>
+        <p><span class="achieve-tag">電気設備事業</span>大手住宅設備メーカー 給湯器入替工事</p>
+      </div>
+      <div class="achieve-item">
+        <div class="check">✓</div>
+        <p><span class="achieve-tag">IT事業</span>大手インフラ系メーカーへのエンジニア常駐</p>
       </div>
     </div>
-    <p class="achieve-note">※電気設備事業における実績です。</p>
   </div>
 </section>
 
