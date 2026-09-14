@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-Rink株式会社 | 公式サイト</title>
+<meta name="description" content="K-Rink株式会社は、電気設備事業・運送事業・IT事業を展開する滋賀県彦根市の企業です。">
+<style>
+  :root {
+    --navy: #040239;
+    --navy-soft: #42416A;
+    --silver: #B3B3C3;
+    --silver-light: #E7E7EF;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", -apple-system, sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.7;
+  }
+
+  .accent-num {
+    font-family: "Bahnschrift SemiBold", "Bahnschrift", "Yu Gothic", sans-serif;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--silver-light);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .header-inner img { height: 40px; width: auto; }
+  .header-inner .brand-name {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: linear-gradient(120deg, var(--navy) 0%, #14124f 55%, var(--navy-soft) 100%);
+    color: var(--white);
+    overflow: hidden;
+  }
+  .hero-content {
+    padding: 88px 24px 96px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .est-badge {
+    display: inline-block;
+    border: 1px solid var(--silver);
+    color: var(--silver-light);
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    letter-spacing: 0.05em;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .hero p.lead {
+    font-size: 1.05rem;
+    color: var(--silver-light);
+    margin-bottom: 36px;
+    max-width: 620px;
+  }
+  .biz-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .biz-badges span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(179,179,195,0.5);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: bold;
+  }
+
+  /* ---------- Section common ---------- */
+  section {
+    padding: 64px 24px;
+  }
+  .section-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--navy-soft);
+    letter-spacing: 0.15em;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+  }
+
+  /* ---------- 事業紹介 ---------- */
+  .business { background: var(--silver-light); }
+  .business-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .business-card {
+    background: var(--white);
+    border: 1px solid var(--silver);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .business-card .head {
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 22px;
+  }
+  .business-card .head .tag {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--silver-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .business-card .head h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+  .business-card .body {
+    padding: 22px;
+  }
+  .business-card .body p {
+    font-size: 0.92rem;
+    color: var(--navy-soft);
+    margin-bottom: 14px;
+  }
+  .business-card .points {
+    list-style: none;
+  }
+  .business-card .points li {
+    display: flex;
+    gap: 8px;
+    font-size: 0.86rem;
+    color: var(--navy-soft);
+    margin-bottom: 6px;
+  }
+  .business-card .points li::before {
+    content: "✓";
+    flex: none;
+    color: var(--navy);
+    font-weight: 800;
+  }
+
+  /* ---------- 導入実績 ---------- */
+  .achieve {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .achieve .section-tag { color: var(--silver-light); border-bottom-color: var(--silver); }
+  .achieve-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .achieve-item {
+    display: flex;
+    gap: 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(179,179,195,0.4);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .achieve-item .check {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .achieve-item p { font-size: 0.92rem; color: var(--silver-light); }
+  .achieve-note {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--silver-light);
+  }
+
+  /* ---------- 会社概要 ---------- */
+  .company { background: var(--white); }
+  .company-table {
+    border: 1px solid var(--silver);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .company-table .row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+  }
+  .company-table .row:nth-child(even) { background: var(--silver-light); }
+  .company-table dt {
+    padding: 14px 18px;
+    font-weight: bold;
+    color: var(--navy);
+    background: rgba(4,2,57,0.04);
+    font-size: 0.9rem;
+  }
+  .company-table dd {
+    padding: 14px 18px;
+    color: var(--navy-soft);
+    font-size: 0.9rem;
+  }
+
+  /* ---------- お問い合わせ ---------- */
+  .contact {
+    background: var(--silver-light);
+    text-align: center;
+  }
+  .contact p {
+    color: var(--navy-soft);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: var(--silver-light);
+    padding: 32px 24px 24px;
+    border-top: 1px solid rgba(179,179,195,0.3);
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .company-name {
+    font-weight: bold;
+    color: var(--white);
+  }
+  footer .meta {
+    font-size: 0.8rem;
+    color: var(--silver);
+  }
+  footer .copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--silver);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 760px) {
+    .business-grid { grid-template-columns: 1fr; }
+    .achieve-list { grid-template-columns: 1fr; }
+    .company-table .row { grid-template-columns: 110px 1fr; }
+    .hero-content { padding: 64px 20px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="assets/logo.png" alt="K-Rink株式会社">
+    <span class="brand-name">K-Rink株式会社</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="est-badge">2026年9月13日 設立</span>
+    <h1>電気・運送・ITの3事業で、<br>くらしとビジネスを支える K-Rink</h1>
+    <p class="lead">K-Rink株式会社は、電気設備事業・運送事業・IT事業を展開する滋賀県彦根市の企業です。それぞれの現場で培った専門性を活かし、地域のお客様・企業のお客様にサービスを提供しています。</p>
+    <div class="biz-badges">
+      <span>電気設備事業</span>
+      <span>運送事業</span>
+      <span>IT事業</span>
+    </div>
+  </div>
+</section>
+
+<section class="business">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">BUSINESS</span>
+      <h2>事業紹介</h2>
+    </div>
+    <div class="business-grid">
+      <div class="business-card">
+        <div class="head">
+          <span class="tag">ELECTRICAL</span>
+          <h3>電気設備事業</h3>
+        </div>
+        <div class="body">
+          <p>電気設備工事・空調設備工事(業務用/家庭用)を中心に、有資格者が在籍する自社対応で店舗・住宅のご相談に迅速に応えます。</p>
+          <ul class="points">
+            <li>365日スピード対応</li>
+            <li>有資格者4名在籍</li>
+            <li>対応エリア：滋賀県・京都府・大阪府</li>
+          </ul>
+        </div>
+      </div>
+      <div class="business-card">
+        <div class="head">
+          <span class="tag">LOGISTICS</span>
+          <h3>運送事業</h3>
+        </div>
+        <div class="body">
+          <p>単身・家族の引っ越しから法人の移転・配送業務まで幅広く対応。梱包から搬入・設置まで、専門スタッフが丁寧に作業します。</p>
+          <ul class="points">
+            <li>単身・家族・法人の引っ越し</li>
+            <li>中・長距離の引っ越しにも対応</li>
+            <li>配送業務・遺品整理も対応</li>
+          </ul>
+        </div>
+      </div>
+      <div class="business-card">
+        <div class="head">
+          <span class="tag">IT</span>
+          <h3>IT事業</h3>
+        </div>
+        <div class="body">
+          <p>常駐型のSES(システムエンジニアリングサービス)を中心に、お客様先へのエンジニア派遣を通じてシステム開発・運用を支援します。</p>
+          <ul class="points">
+            <li>SESによるエンジニア派遣</li>
+            <li>常駐先での開発・運用支援</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="achieve">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">ACHIEVEMENT</span>
+      <h2>導入実績</h2>
+    </div>
+    <div class="achieve-list">
+      <div class="achieve-item">
+        <div class="check">✓</div>
+        <p>大手飲食チェーン店 エアコン取替工事</p>
+      </div>
+      <div class="achieve-item">
+        <div class="check">✓</div>
+        <p>大手住宅設備メーカー 給湯器入替工事</p>
+      </div>
+    </div>
+    <p class="achieve-note">※電気設備事業における実績です。</p>
+  </div>
+</section>
+
+<section class="company">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">COMPANY</span>
+      <h2>会社概要</h2>
+    </div>
+    <dl class="company-table">
+      <div class="row"><dt>会社名</dt><dd>K-Rink株式会社</dd></div>
+      <div class="row"><dt>代表者</dt><dd>木澤昇希</dd></div>
+      <div class="row"><dt>設立</dt><dd>2026年9月13日</dd></div>
+      <div class="row"><dt>所在地</dt><dd>滋賀県彦根市野良田町323</dd></div>
+      <div class="row"><dt>事業内容</dt><dd>電気設備事業、運送事業、IT事業</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">CONTACT</span>
+      <h2>お問い合わせ</h2>
+    </div>
+    <p>お問い合わせ窓口は準備中です。公開まで今しばらくお待ちください。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="company-name">K-Rink株式会社</div>
+      <div class="meta">滋賀県彦根市野良田町323</div>
+      <div class="meta">電気設備事業 / 運送事業 / IT事業</div>
+    </div>
+    <div class="copyright">&copy; K-Rink Co., Ltd.</div>
+  </div>
+</footer>
+
+</body>
+</html>
