@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>引っ越し・配送なら K-Rink株式会社</title>
+<meta name="description" content="関西一円対応。単身・家族・法人のお引っ越しならK-Rink株式会社。価格の安さ・スピード対応・丁寧な作業が強みです。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="引っ越し・配送なら K-Rink株式会社">
+<meta property="og:description" content="関西一円対応。単身・家族・法人のお引っ越しならK-Rink株式会社。">
+<meta property="og:image" content="assets/hero.jpg">
+<meta name="theme-color" content="#040239">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root {
+    --navy: #040239;
+    --navy-soft: #5B5A78;
+    --silver: #B3B3C3;
+    --silver-light: #E7E7EF;
+    --white: #FFFFFF;
+    --amber: #E8A33D;
+    --amber-deep: #C97F1E;
+    --mint: #EAF6F0;
+    --peach: #FFF3E7;
+    --lavender: #EFEDF7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", -apple-system, sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .accent-num {
+    font-family: "Bahnschrift SemiBold", "Bahnschrift", "Yu Gothic", sans-serif;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  h1, h2, h3 { text-wrap: balance; }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--silver-light);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo img { height: 40px; width: auto; }
+  .brand-name {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--navy);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: var(--white);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(4,2,57,0.86) 0%, rgba(4,2,57,0.68) 45%, rgba(4,2,57,0.4) 100%);
+    z-index: 1;
+  }
+  .hero img.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 24px 88px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .area-badge {
+    display: inline-block;
+    border: 1px solid var(--silver);
+    color: var(--silver-light);
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .hero p.lead {
+    font-size: 1.05rem;
+    color: var(--silver-light);
+    margin-bottom: 32px;
+    max-width: 560px;
+  }
+  .prep-note {
+    display: inline-block;
+    border: 1px solid var(--silver);
+    color: var(--silver-light);
+    font-size: 0.88rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ---------- Section common ---------- */
+  section {
+    padding: 64px 24px;
+  }
+  .section-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--navy-soft);
+    letter-spacing: 0.15em;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+  }
+
+  /* ---------- 選ばれる理由 ---------- */
+  .reasons {
+    background: var(--peach);
+  }
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .reason-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(4,2,57,0.05), 0 10px 24px -12px rgba(4,2,57,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1px 2px rgba(4,2,57,0.07), 0 18px 30px -14px rgba(4,2,57,0.35);
+  }
+  .reason-card .num {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--amber-deep);
+    margin-bottom: 12px;
+  }
+  .reason-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--navy);
+  }
+  .reason-card p {
+    font-size: 0.9rem;
+    color: var(--navy-soft);
+  }
+
+  /* ---------- サービス内容 ---------- */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 28px 24px;
+    box-shadow: 0 1px 2px rgba(4,2,57,0.05), 0 10px 24px -12px rgba(4,2,57,0.2);
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1px 2px rgba(4,2,57,0.07), 0 18px 30px -14px rgba(4,2,57,0.3);
+  }
+  .service-card .icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--navy);
+  }
+  .service-card .icon svg { width: 26px; height: 26px; }
+  .service-card.t-mint .icon { background: var(--mint); }
+  .service-card.t-peach .icon { background: var(--peach); }
+  .service-card.t-lavender .icon { background: var(--lavender); }
+  .service-card .head {
+    color: var(--navy);
+    font-weight: bold;
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+  }
+  .service-card .body {
+    font-size: 0.88rem;
+    color: var(--navy-soft);
+  }
+
+  /* ---------- 施工実績ギャラリー ---------- */
+  .gallery { background: var(--lavender); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .gallery-grid figure {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 1px 2px rgba(4,2,57,0.05), 0 10px 22px -12px rgba(4,2,57,0.22);
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .gallery-grid figure:hover img {
+    transform: scale(1.08);
+  }
+
+  /* ---------- 対応エリア ---------- */
+  .area-badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .area-badges span {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 32px;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+  .area-note {
+    text-align: center;
+    color: var(--navy-soft);
+    font-size: 0.88rem;
+  }
+
+  /* ---------- ご利用の流れ ---------- */
+  .flow {
+    background: var(--mint);
+  }
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .flow-step {
+    text-align: center;
+    position: relative;
+  }
+  .flow-step .circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 auto 14px;
+    background: var(--white);
+  }
+  .flow-step h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--navy);
+  }
+  .flow-step p {
+    font-size: 0.82rem;
+    color: var(--navy-soft);
+  }
+
+  /* ---------- 導入実績 ---------- */
+  .achieve {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .achieve .section-tag { color: var(--silver-light); border-bottom-color: var(--silver); }
+  .achieve-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .achieve-item {
+    display: flex;
+    gap: 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(179,179,195,0.4);
+    border-radius: 10px;
+    padding: 20px;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+  .achieve-item:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(179,179,195,0.7);
+  }
+  .achieve-item .check {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .achieve-item p { font-size: 0.92rem; color: var(--silver-light); }
+
+  /* ---------- 会社概要 ---------- */
+  .company { background: var(--silver-light); }
+  .company-table {
+    border: 1px solid var(--silver);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .company-table .row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+  }
+  .company-table .row:nth-child(even) { background: var(--silver-light); }
+  .company-table dt {
+    padding: 14px 18px;
+    font-weight: bold;
+    color: var(--navy);
+    background: rgba(4,2,57,0.04);
+    font-size: 0.9rem;
+  }
+  .company-table dd {
+    padding: 14px 18px;
+    color: var(--navy-soft);
+    font-size: 0.9rem;
+  }
+
+  /* ---------- お問い合わせ ---------- */
+  .contact {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  .contact p.lead2 {
+    color: var(--silver-light);
+    margin-bottom: 28px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: var(--silver-light);
+    padding: 32px 24px 24px;
+    border-top: 1px solid rgba(179,179,195,0.3);
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .company-name {
+    font-weight: bold;
+    color: var(--white);
+  }
+  footer .meta {
+    font-size: 0.8rem;
+    color: var(--silver);
+  }
+  footer .copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--silver);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 760px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .achieve-list { grid-template-columns: 1fr; }
+    .flow-steps { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+    .company-table .row { grid-template-columns: 110px 1fr; }
+    .hero-content { padding: 56px 20px 72px; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="home-link" href="../">
+      <div class="logo"><img src="assets/logo.png" alt="K-Rink株式会社"></div>
+      <span class="brand-name">K-Rink株式会社</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="assets/hero.jpg" alt="引っ越し作業の様子">
+  <div class="hero-content">
+    <span class="area-badge">関西一円 対応</span>
+    <h1>単身・家族・法人のお引っ越しを、<br>安さとスピードでサポートします</h1>
+    <p class="lead">K-Rink株式会社の運送事業は、単身・家族・法人のお引っ越しを中心に、関西一円に対応しています。</p>
+    <p class="prep-note">お問い合わせ窓口は準備中です。今しばらくお待ちください。</p>
+  </div>
+</section>
+
+<main>
+
+<section class="reasons reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">WHY K-Rink</span>
+      <h2>K-Rinkが選ばれる理由</h2>
+    </div>
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="num accent-num">01</div>
+        <h3>価格の安さ</h3>
+        <p>ご予算に応じて柔軟にご相談いただけます。まずはお気軽にご相談ください。</p>
+      </div>
+      <div class="reason-card">
+        <div class="num accent-num">02</div>
+        <h3>スピード対応・即日対応可能</h3>
+        <p>お急ぎのお引っ越しにも対応。迅速に動きます。</p>
+      </div>
+      <div class="reason-card">
+        <div class="num accent-num">03</div>
+        <h3>丁寧な作業</h3>
+        <p>下請けとして培った1年半の実務経験を活かし、一つひとつの作業を丁寧に行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">SERVICE</span>
+      <h2>対応内容</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card t-mint">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg></div>
+        <div class="head">単身のお引っ越し</div>
+        <div class="body">お一人暮らしのお引っ越しに対応します。</div>
+      </div>
+      <div class="service-card t-peach">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="2.6"/><circle cx="16" cy="9" r="2.2"/><path d="M3.5 20v-1a5.5 5.5 0 0 1 10 -3"/><path d="M12.5 20v-1a4.2 4.2 0 0 1 8 -1.9"/></svg></div>
+        <div class="head">家族のお引っ越し</div>
+        <div class="body">ご家族でのお引っ越しに対応します。</div>
+      </div>
+      <div class="service-card t-lavender">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><line x1="4" y1="21" x2="20" y2="21"/></svg></div>
+        <div class="head">法人のお引っ越し</div>
+        <div class="body">オフィス・店舗などの法人のお引っ越しに対応します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">WORKS</span>
+      <h2>作業の様子</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="assets/gallery-1.jpg" alt="荷物を運ぶ様子"></figure>
+      <figure><img src="assets/gallery-2.jpg" alt="引っ越し作業の様子"></figure>
+      <figure><img src="assets/gallery-3.jpg" alt="梱包物の確認作業の様子"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="area reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">AREA</span>
+      <h2>対応エリア</h2>
+    </div>
+    <div class="area-badges">
+      <span>関西一円</span>
+    </div>
+    <p class="area-note">上記エリア以外でも対応可能な場合がございます。まずはお問い合わせください。</p>
+  </div>
+</section>
+
+<section class="flow reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">FLOW</span>
+      <h2>ご利用の流れ</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="circle accent-num">1</div>
+        <h3>お問い合わせ</h3>
+        <p>ご相談内容をお聞かせください。</p>
+      </div>
+      <div class="flow-step">
+        <div class="circle accent-num">2</div>
+        <h3>お見積り</h3>
+        <p>内容を確認のうえ、お見積りをご提示します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="circle accent-num">3</div>
+        <h3>作業</h3>
+        <p>スタッフが丁寧かつスピーディに作業します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="circle accent-num">4</div>
+        <h3>完了</h3>
+        <p>仕上がりをご確認いただき、完了となります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="achieve reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">ACHIEVEMENT</span>
+      <h2>導入実績</h2>
+    </div>
+    <div class="achieve-list">
+      <div class="achieve-item">
+        <div class="check">✓</div>
+        <p>下請け業務による引っ越し実務 1年半の経験</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="company reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">COMPANY</span>
+      <h2>会社概要</h2>
+    </div>
+    <dl class="company-table">
+      <div class="row"><dt>会社名</dt><dd>K-Rink株式会社</dd></div>
+      <div class="row"><dt>代表者</dt><dd>木澤昇希</dd></div>
+      <div class="row"><dt>設立</dt><dd>2026年9月13日</dd></div>
+      <div class="row"><dt>所在地</dt><dd>滋賀県彦根市野良田町323</dd></div>
+      <div class="row"><dt>事業内容</dt><dd>引っ越し・配送</dd></div>
+      <div class="row"><dt>対応エリア</dt><dd>関西一円</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <div class="section-inner">
+    <h2>お引っ越しのご相談はお気軽にお問い合わせください</h2>
+    <p class="lead2">お問い合わせ窓口は準備中です。今しばらくお待ちください。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="company-name">K-Rink株式会社</div>
+      <div class="meta">滋賀県彦根市野良田町323</div>
+      <div class="meta">運送事業 / 単身・家族・法人のお引っ越し・配送 / 関西一円対応</div>
+    </div>
+    <div class="copyright">&copy; K-Rink Co., Ltd.</div>
+  </div>
+</footer>
+
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+  }
+</script>
+
+</body>
+</html>
