@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バスケットボールクリニック | K-Rink株式会社</title>
+<meta name="description" content="彦根市にU-15クラブチームを。K-Rink株式会社主催のバスケットボールクリニック。中学から社会人まで国内トップクラスでプレーした経験を持つコーチが直接指導します。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="バスケットボールクリニック | K-Rink株式会社">
+<meta property="og:description" content="彦根市にU-15クラブチームを。小学4年生〜中学3年生対象のバスケットボールクリニックを開催します。">
+<meta property="og:image" content="assets/action-4.jpg">
+<meta name="theme-color" content="#040239">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root {
+    --navy: #040239;
+    --cream: #FFF6EE;
+    --charcoal: #2B2118;
+    --charcoal-soft: #5A5048;
+    --orange: #E8681C;
+    --orange-deep: #B8430A;
+    --line: #E9DFD3;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", -apple-system, sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .accent-num {
+    font-family: "Bahnschrift SemiBold", "Bahnschrift", "Yu Gothic", sans-serif;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { text-wrap: balance; }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .home-link { display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 40px; width: auto; }
+  .brand-name { font-weight: 800; font-size: 1.05rem; color: var(--navy); }
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    border-radius: 999px;
+    transition: background 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .header-cta:hover { background: var(--orange-deep); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: var(--white);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(20,12,4,0.88) 0%, rgba(20,12,4,0.62) 55%, rgba(184,67,10,0.55) 100%);
+    z-index: 1;
+  }
+  .hero img.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 84px 24px 72px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .date-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    background: var(--orange);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    font-weight: 800;
+  }
+  .date-badge .d { font-size: 1.5rem; }
+  .date-badge .w { font-size: 0.85rem; }
+  .hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .hero p.lead {
+    font-size: 1.05rem;
+    color: #F3E9DD;
+    margin-bottom: 32px;
+    max-width: 560px;
+  }
+  .hero-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 800;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 26px -8px rgba(184,67,10,0.6);
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .btn-primary:hover { transform: translateY(-3px); background: var(--orange-deep); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    font-weight: bold;
+    padding: 16px 26px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Section common ---------- */
+  section { padding: 88px 24px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 44px; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--white);
+    box-shadow: 0 1px 2px rgba(43,33,24,0.08);
+    padding: 7px 18px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--charcoal);
+  }
+
+  /* ---------- アピールポイント ---------- */
+  .points-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .point-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 30px 24px;
+    box-shadow: 0 1px 2px rgba(43,33,24,0.05), 0 12px 26px -14px rgba(43,33,24,0.2);
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .point-card:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(43,33,24,0.07), 0 20px 34px -16px rgba(43,33,24,0.3); }
+  .point-card .icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: #FDE7D6;
+    color: var(--orange-deep);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+  }
+  .point-card .icon svg { width: 26px; height: 26px; }
+  .point-card h3 { font-size: 1.02rem; margin-bottom: 8px; color: var(--charcoal); }
+  .point-card p { font-size: 0.88rem; color: var(--charcoal-soft); }
+
+  /* ---------- コーチ紹介 ---------- */
+  .coach { background: var(--white); }
+  .coach-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .coach-photo {
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 20px 40px -16px rgba(43,33,24,0.35);
+  }
+  .coach-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .coach-name { font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; color: var(--charcoal); }
+  .coach-path {
+    font-size: 0.9rem;
+    color: var(--charcoal-soft);
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline { list-style: none; }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.92rem;
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .yr {
+    font-weight: 800;
+    color: var(--orange-deep);
+    font-size: 1rem;
+  }
+  .timeline .ev { color: var(--charcoal); }
+
+  /* ---------- ギャラリー ---------- */
+  .gallery { background: var(--charcoal); }
+  .gallery .section-tag { background: rgba(255,255,255,0.08); color: #F3D9C2; box-shadow: none; }
+  .gallery .section-head h2 { color: var(--white); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .gallery-grid figure {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+  }
+  .gallery-grid img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .gallery-grid figure:hover img { transform: scale(1.08); }
+
+  /* ---------- クリニック概要 ---------- */
+  .info-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 44px -20px rgba(43,33,24,0.3);
+  }
+  .info-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+  .info-row:nth-child(even) { background: var(--cream); }
+  .info-row dt {
+    padding: 18px 22px;
+    font-weight: bold;
+    color: var(--orange-deep);
+    font-size: 0.92rem;
+  }
+  .info-row dd {
+    padding: 18px 22px;
+    color: var(--charcoal);
+    font-size: 0.94rem;
+  }
+
+  /* ---------- お申し込みCTA ---------- */
+  .apply {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a1552 100%);
+    color: var(--white);
+    text-align: center;
+  }
+  .apply h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 14px; }
+  .apply p { color: #D9D6E8; margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+  /* ---------- 会社概要 ---------- */
+  .company { background: var(--white); }
+  .company-table {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .company-table .row { display: grid; grid-template-columns: 140px 1fr; }
+  .company-table .row:nth-child(even) { background: var(--cream); }
+  .company-table dt { padding: 14px 18px; font-weight: bold; color: var(--navy); font-size: 0.9rem; }
+  .company-table dd { padding: 14px 18px; color: var(--charcoal-soft); font-size: 0.9rem; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: #C9C6DC;
+    padding: 32px 24px 24px;
+  }
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer .company-name { font-weight: bold; color: var(--white); }
+  footer .meta { font-size: 0.8rem; }
+  footer .copyright { width: 100%; text-align: center; font-size: 0.75rem; margin-top: 20px; }
+
+  @media (max-width: 760px) {
+    .points-grid { grid-template-columns: 1fr; }
+    .coach-grid { grid-template-columns: 1fr; }
+    .coach-photo { max-width: 320px; margin: 0 auto; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .info-row { grid-template-columns: 120px 1fr; }
+    .company-table .row { grid-template-columns: 110px 1fr; }
+    .hero-content { padding: 64px 20px 56px; }
+    .header-cta span.full { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="home-link" href="../">
+      <div class="logo"><img src="assets/logo.png" alt="K-Rink株式会社"></div>
+      <span class="brand-name">K-Rink株式会社</span>
+    </a>
+    <a class="header-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdbDEE8cTQb0VUGlaGY4oyg8IFdsYlS2zVScngk0nl8W44Y4Q/viewform" target="_blank" rel="noopener noreferrer"><span class="full">クリニックに</span>申し込む</a>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="assets/action-4.jpg" alt="コーチ奥野綾汰の試合中のドライブの様子">
+  <div class="hero-content">
+    <span class="date-badge"><span class="d accent-num">10.18</span><span class="w">SUN 受付13:00〜</span></span>
+    <h1>彦根に、U-15クラブチームを。<br>バスケットボールクリニック開催</h1>
+    <p class="lead">中学から社会人まで国内トップクラスでプレーした経験を持つコーチが直接指導。小学4年生〜中学3年生対象、誰でも歓迎・初心者も大歓迎です。</p>
+    <div class="hero-cta-row">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdbDEE8cTQb0VUGlaGY4oyg8IFdsYlS2zVScngk0nl8W44Y4Q/viewform" target="_blank" rel="noopener noreferrer">クリニックに申し込む →</a>
+      <a class="btn-ghost" href="#coach">コーチを見る</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="points reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">POINT</span>
+      <h2>本クリニックのアピールポイント</h2>
+    </div>
+    <div class="points-grid">
+      <div class="point-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-3 8-6.5 8-11a8 8 0 0 0-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>彦根で生まれ育ったコーチの経験を還元</h3>
+        <p>地元・彦根出身のコーチが、これまで積み上げてきた競技経験を子どもたちに直接還元します。</p>
+      </div>
+      <div class="point-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>目的が明確な指導</h3>
+        <p>ただメニューをこなすのではなく、「なぜこの練習をするのか」を明確にしたうえで指導します。</p>
+      </div>
+      <div class="point-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>地域に根ざしたクラブチームの構築</h3>
+        <p>継続的な指導を通じて、個人もチームも一緒にレベルアップしていく地域密着のクラブを目指します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coach reveal" id="coach">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">COACHING STAFF</span>
+      <h2>コーチ紹介</h2>
+    </div>
+    <div class="coach-grid">
+      <div class="coach-photo"><img src="assets/action-1.jpg" alt="コーチ奥野綾汰のシュートフォーム"></div>
+      <div>
+        <div class="coach-name">奥野 綾汰</div>
+        <div class="coach-path">稲枝ニュースターズ → 稲枝中学校 → 藤枝明誠高校 → 明治大学 → 日本無線 → TOKYO VERDY.EXE</div>
+        <ul class="timeline">
+          <li><span class="yr accent-num">2010</span><span class="ev">近畿ミニバスケットボール交歓大会 出場</span></li>
+          <li><span class="yr accent-num">2013</span><span class="ev">滋賀県中学校夏季総合体育大会 優勝、近畿中学総体 第3位、全国大会 出場</span></li>
+          <li><span class="yr accent-num">2014</span><span class="ev">大分インターハイ 準優勝、ウィンターカップ 第3位</span></li>
+          <li><span class="yr accent-num">2015</span><span class="ev">千葉インターハイ ベスト16、ウィンターカップ出場</span></li>
+          <li><span class="yr accent-num">2016</span><span class="ev">京都インターハイ 出場</span></li>
+          <li><span class="yr accent-num">2018</span><span class="ev">全日本インカレ ベスト8</span></li>
+          <li><span class="yr accent-num">2019</span><span class="ev">全日本インカレ ベスト16</span></li>
+          <li><span class="yr accent-num">2023</span><span class="ev">実業団チャンピオンシップ ベスト8</span></li>
+          <li><span class="yr accent-num">2022-25</span><span class="ev">TOKYO VERDY.EXE(3x3 PREMIER)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">GALLERY</span>
+      <h2>これまでのプレー</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="assets/action-1.jpg" alt="日本無線時代のシュートシーン"></figure>
+      <figure><img src="assets/action-2.jpg" alt="日本無線時代のドライブシーン"></figure>
+      <figure><img src="assets/action-4.jpg" alt="明治大学時代のドライブシーン"></figure>
+      <figure><img src="assets/action-3.jpg" alt="TOKYO VERDY.EXE時代の仲間との一枚"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="clinic reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">CLINIC</span>
+      <h2>クリニック概要</h2>
+    </div>
+    <dl class="info-card">
+      <div class="info-row"><dt>日時</dt><dd>2026年10月18日(日) 受付：13:00〜 開始：13:30〜 ※人数によっては2部制</dd></div>
+      <div class="info-row"><dt>会場</dt><dd>彦根市立稲枝中学校体育館</dd></div>
+      <div class="info-row"><dt>対象</dt><dd>小学4年生〜中学3年生の男女(小学3年生以下はご相談ください) / 定員なし</dd></div>
+      <div class="info-row"><dt>参加費</dt><dd>1回 1,000円(税込)</dd></div>
+      <div class="info-row"><dt>持ち物</dt><dd>シューズ・タオル・飲み物・バスケットボール(ある方は)など</dd></div>
+      <div class="info-row"><dt>その他</dt><dd>保護者の送迎待機・見学は可能です(駐車場使用ルールに順守ください)。参加者は傷害保険に加入済みであること。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="apply reveal">
+  <div class="section-inner">
+    <h2>お申し込みはGoogleフォームから</h2>
+    <p>以下のボタンから申込みフォームに進めます。</p>
+    <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdbDEE8cTQb0VUGlaGY4oyg8IFdsYlS2zVScngk0nl8W44Y4Q/viewform" target="_blank" rel="noopener noreferrer">クリニックに申し込む →</a>
+  </div>
+</section>
+
+<section class="company reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">COMPANY</span>
+      <h2>主催会社概要</h2>
+    </div>
+    <dl class="company-table">
+      <div class="row"><dt>会社名</dt><dd>K-Rink株式会社</dd></div>
+      <div class="row"><dt>代表者</dt><dd>木澤昇希</dd></div>
+      <div class="row"><dt>設立</dt><dd>2026年9月13日</dd></div>
+      <div class="row"><dt>所在地</dt><dd>滋賀県彦根市野良田町323</dd></div>
+      <div class="row"><dt>事業内容</dt><dd>電気設備事業、運送事業、IT事業、バスケットボールクラブ運営</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="company-name">K-Rink株式会社</div>
+      <div class="meta">滋賀県彦根市野良田町323</div>
+      <div class="meta">バスケットボールクリニック / 彦根市立稲枝中学校体育館</div>
+    </div>
+    <div class="copyright">&copy; K-Rink Co., Ltd.</div>
+  </div>
+</footer>
+
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+  }
+</script>
+
+</body>
+</html>
