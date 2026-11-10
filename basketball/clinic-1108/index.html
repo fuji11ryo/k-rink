@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2回クリニック 開催報告 | K-Rink株式会社</title>
+<meta name="description" content="2026年11月8日に開催した第2回バスケットボールクリニック(中学生向け)の開催報告。10名の中学生にご参加いただきました。次回クリニックのご案内も掲載しています。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="第2回クリニック 開催報告 | K-Rink株式会社">
+<meta property="og:description" content="10名の中学生にご参加いただき、第2回クリニックを無事開催できました。">
+<meta property="og:image" content="assets/gallery-1-group.jpg">
+<meta name="theme-color" content="#040239">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root {
+    --navy: #040239;
+    --cream: #FFF6EE;
+    --charcoal: #2B2118;
+    --charcoal-soft: #5A5048;
+    --orange: #E8681C;
+    --orange-deep: #B8430A;
+    --line: #E9DFD3;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", -apple-system, sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .accent-num {
+    font-family: "Bahnschrift SemiBold", "Bahnschrift", "Yu Gothic", sans-serif;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { text-wrap: balance; }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .home-link { display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 40px; width: auto; }
+  .brand-name { font-weight: 800; font-size: 1.05rem; color: var(--navy); }
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    border-radius: 999px;
+    transition: background 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .header-cta:hover { background: var(--orange-deep); }
+
+  /* ---------- Hero (report) ---------- */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #1a1552 100%);
+    color: var(--white);
+  }
+  .hero-content {
+    padding: 72px 24px 56px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .report-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4.6vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+  .hero p.lead {
+    font-size: 1.02rem;
+    color: #D9D6E8;
+    margin-bottom: 30px;
+    max-width: 620px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .hero-meta span {
+    display: block;
+    font-size: 0.85rem;
+    color: #BFBADB;
+    padding-left: 18px;
+    border-left: 2px solid var(--orange);
+  }
+  .hero-meta strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--white);
+    font-weight: 800;
+    margin-top: 2px;
+  }
+
+  /* ---------- Section common ---------- */
+  section { padding: 76px 24px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 40px; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--white);
+    box-shadow: 0 1px 2px rgba(43,33,24,0.08);
+    padding: 7px 18px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+    color: var(--charcoal);
+  }
+
+  /* ---------- Stats ---------- */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .stat-tile {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(43,33,24,0.05), 0 12px 26px -14px rgba(43,33,24,0.2);
+  }
+  .stat-tile .n {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--orange-deep);
+    line-height: 1.1;
+  }
+  .stat-tile .l {
+    font-size: 0.85rem;
+    color: var(--charcoal-soft);
+    margin-top: 6px;
+  }
+
+  /* ---------- ギャラリー ---------- */
+  .gallery { background: var(--charcoal); }
+  .gallery .section-tag { background: rgba(255,255,255,0.08); color: #F3D9C2; box-shadow: none; }
+  .gallery .section-head h2 { color: var(--white); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .gallery-grid figure {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    position: relative;
+  }
+  .gallery-grid img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .gallery-grid figure:hover img { transform: scale(1.08); }
+  .gallery-grid figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 10px 14px 8px;
+    font-size: 0.78rem;
+    color: var(--white);
+    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  /* ---------- 次回案内 ---------- */
+  .next { background: var(--white); }
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .next-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .next-card .tag {
+    display: inline-flex;
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    background: #FDE7D6;
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .next-card .date {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  .next-card .time {
+    font-size: 0.88rem;
+    color: var(--charcoal-soft);
+  }
+  .next-card .btn-apply {
+    margin-top: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 800;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    transition: background 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  .next-card .btn-apply:hover { background: var(--orange-deep); }
+
+  /* ---------- Back link ---------- */
+  .back-row { text-align: center; padding: 0 24px 72px; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    color: var(--orange-deep);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: #C9C6DC;
+    padding: 32px 24px 24px;
+  }
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer .company-name { font-weight: bold; color: var(--white); }
+  footer .meta { font-size: 0.8rem; }
+  footer .copyright { width: 100%; text-align: center; font-size: 0.75rem; margin-top: 20px; }
+
+  @media (max-width: 760px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); max-width: 420px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .next-grid { grid-template-columns: 1fr; }
+    .hero-content { padding: 56px 20px 48px; }
+    .header-cta span.full { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="home-link" href="../../">
+      <div class="logo"><img src="assets/logo.png" alt="K-Rink株式会社"></div>
+      <span class="brand-name">K-Rink株式会社</span>
+    </a>
+    <a class="header-cta" href="../#next"><span class="full">次回クリニックに</span>申し込む</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="report-badge">開催報告</span>
+    <h1>第2回クリニック、<br>無事開催できました。</h1>
+    <p class="lead">2026年11月8日、彦根市立稲枝中学校体育館にて第2回バスケットボールクリニック(中学生向け)を開催しました。10名の中学生にご参加いただき、盛況のうちに終えることができました。ご参加いただいた皆様、ありがとうございました。</p>
+    <div class="hero-meta">
+      <span>開催日<strong class="accent-num">2026年11月8日(日)</strong></span>
+      <span>会場<strong>彦根市立稲枝中学校体育館</strong></span>
+      <span>参加者<strong class="accent-num">10名</strong></span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="stats reveal">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="n accent-num">10</div>
+        <div class="l">参加人数(名)</div>
+      </div>
+      <div class="stat-tile">
+        <div class="n accent-num">2026.11.8</div>
+        <div class="l">開催日</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery reveal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">GALLERY</span>
+      <h2>当日の様子</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure><img src="assets/gallery-1-group.jpg" alt="参加者の集合シーン"><figcaption>集合シーン</figcaption></figure>
+      <figure><img src="assets/gallery-2-warmup.jpg" alt="ウォーミングアップの様子"><figcaption>ウォーミングアップ</figcaption></figure>
+      <figure><img src="assets/gallery-3-1on1.jpg" alt="1on1ドライブ練習の様子"><figcaption>1on1ドライブ練習</figcaption></figure>
+      <figure><img src="assets/gallery-4-handling.jpg" alt="ハンドリング練習の様子"><figcaption>ハンドリング練習</figcaption></figure>
+      <figure><img src="assets/gallery-5-game.jpg" alt="ゲーム形式練習の様子"><figcaption>ゲーム形式練習</figcaption></figure>
+      <figure><img src="assets/gallery-6-coaching.jpg" alt="ヘッドコーチ奥野による指導の様子"><figcaption>ヘッドコーチ 奥野による指導</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="next reveal" id="next">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-tag">NEXT CLINIC</span>
+      <h2>次回クリニックのご案内</h2>
+    </div>
+    <div class="next-grid">
+      <div class="next-card">
+        <span class="tag">小学生向け</span>
+        <div class="date accent-num">11.15 SUN</div>
+        <div class="time">13:00〜</div>
+        <a class="btn-apply" href="https://forms.gle/syhmS6LQ5eN7bRdp8" target="_blank" rel="noopener noreferrer">申し込む →</a>
+      </div>
+      <div class="next-card">
+        <span class="tag">中学生向け</span>
+        <div class="date accent-num">11.15 SUN</div>
+        <div class="time">15:30〜</div>
+        <a class="btn-apply" href="https://forms.gle/AnX9e4Bt1R7dUysW7" target="_blank" rel="noopener noreferrer">申し込む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="back-row">
+  <a class="back-link" href="../">&larr; バスケットボール事業トップへ戻る</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="company-name">K-Rink株式会社</div>
+      <div class="meta">滋賀県彦根市野良田町323</div>
+      <div class="meta">バスケットボールクリニック / 彦根市立稲枝中学校体育館</div>
+    </div>
+    <div class="copyright">&copy; K-Rink Co., Ltd.</div>
+  </div>
+</footer>
+
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+  }
+</script>
+
+</body>
+</html>

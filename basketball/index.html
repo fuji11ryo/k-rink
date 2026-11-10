@@ -290,9 +290,14 @@
 
   /* ---------- 開催レポート ---------- */
   .report { background: var(--white); }
-  .report-card {
+  .report-grid {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .report-card {
+    display: flex;
+    flex-direction: column;
     background: var(--cream);
     border: 1px solid var(--line);
     border-radius: 20px;
@@ -304,14 +309,14 @@
     transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
   }
   .report-card:hover .ph img { transform: scale(1.05); }
-  .report-card .body { padding: 36px; display: flex; flex-direction: column; gap: 14px; }
+  .report-card .body { padding: 28px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
   .report-card .date-tag {
     display: inline-block; background: #FDE7D6; color: var(--orange-deep);
     font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 999px;
     width: fit-content;
   }
-  .report-card h3 { font-size: 1.3rem; font-weight: 800; color: var(--charcoal); }
-  .report-card p { font-size: 0.92rem; color: var(--charcoal-soft); }
+  .report-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--charcoal); }
+  .report-card p { font-size: 0.9rem; color: var(--charcoal-soft); }
   .report-card .link {
     margin-top: auto;
     display: inline-flex; align-items: center; gap: 10px;
@@ -321,7 +326,7 @@
 
   /* ---------- 次回クリニックのご案内 ---------- */
   .next { background: var(--cream); }
-  .next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .next-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 720px; margin: 0 auto; }
   .next-card {
     background: var(--white); border-radius: 16px; padding: 28px 24px;
     box-shadow: 0 1px 2px rgba(43,33,24,0.05), 0 12px 26px -14px rgba(43,33,24,0.2);
@@ -358,6 +363,7 @@
   .company-table .row:nth-child(even) { background: var(--cream); }
   .company-table dt { padding: 14px 18px; font-weight: bold; color: var(--navy); font-size: 0.9rem; }
   .company-table dd { padding: 14px 18px; color: var(--charcoal-soft); font-size: 0.9rem; }
+  .company-table dd a { text-decoration: underline; text-underline-offset: 2px; }
 
   /* ---------- Footer ---------- */
   footer {
@@ -490,15 +496,26 @@
       <h2>クリニック開催レポート</h2>
       <p class="sub">開催ごとの様子を写真付きでまとめています。</p>
     </div>
-    <a class="report-card" href="clinic-1018/">
-      <div class="ph"><img src="clinic-1018/assets/gallery-1-group.jpg" alt="第1回クリニックの集合写真"></div>
-      <div class="body">
-        <span class="date-tag">2026.10.18 開催</span>
-        <h3>第1回クリニック開催レポート</h3>
-        <p>53名の参加者にお集まりいただき、第1回クリニックを無事開催できました。当日の指導風景・練習風景を写真でご紹介します。</p>
-        <span class="link">レポートを見る →</span>
-      </div>
-    </a>
+    <div class="report-grid">
+      <a class="report-card" href="clinic-1108/">
+        <div class="ph"><img src="clinic-1108/assets/gallery-1-group.jpg" alt="第2回クリニックの集合写真"></div>
+        <div class="body">
+          <span class="date-tag">2026.11.8 開催</span>
+          <h3>第2回クリニック開催レポート</h3>
+          <p>10名の中学生にご参加いただき、第2回クリニックを無事開催できました。当日の練習風景を写真でご紹介します。</p>
+          <span class="link">レポートを見る →</span>
+        </div>
+      </a>
+      <a class="report-card" href="clinic-1018/">
+        <div class="ph"><img src="clinic-1018/assets/gallery-1-group.jpg" alt="第1回クリニックの集合写真"></div>
+        <div class="body">
+          <span class="date-tag">2026.10.18 開催</span>
+          <h3>第1回クリニック開催レポート</h3>
+          <p>53名の参加者にお集まりいただき、第1回クリニックを無事開催できました。当日の指導風景・練習風景を写真でご紹介します。</p>
+          <span class="link">レポートを見る →</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -510,13 +527,6 @@
       <p class="sub">11月は対象・テーマを変えて3回開催します。参加しやすい回にお申込みください。</p>
     </div>
     <div class="next-grid">
-      <div class="next-card">
-        <span class="audience-tag">中学生向け</span>
-        <div class="date-line">11月8日(日) 受付13:00〜</div>
-        <div class="theme">頭を使ってバスケットをプレーしよう！</div>
-        <div class="theme-sub">オフボールの動き方、スペーシング、試合での考え方など</div>
-        <a class="apply-btn" href="https://forms.gle/p2t9EBmtbr7kQjSx6" target="_blank" rel="noopener noreferrer">申し込む →</a>
-      </div>
       <div class="next-card">
         <span class="audience-tag">小学生向け</span>
         <div class="date-line">11月15日(日) 受付13:00〜</div>
@@ -548,6 +558,7 @@
       <div class="row"><dt>設立</dt><dd>2026年9月13日</dd></div>
       <div class="row"><dt>所在地</dt><dd>滋賀県彦根市野良田町323</dd></div>
       <div class="row"><dt>事業内容</dt><dd>電気設備事業、運送事業、IT事業、バスケットボールクラブ運営</dd></div>
+      <div class="row"><dt>メール</dt><dd><a href="mailto:info@k-rink.co.jp">info@k-rink.co.jp</a></dd></div>
     </dl>
   </div>
 </section>
